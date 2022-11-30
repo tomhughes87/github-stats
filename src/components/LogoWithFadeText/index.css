@@ -1,0 +1,52 @@
+
+.logoMainContainer{
+  display: flex;
+  justify-content: center;
+}
+
+#logo{
+    /* background-color: white; */
+    width: 400px;
+    /* border-radius: 50%; */
+    z-index: 1;
+    position: absolute;
+  }
+  
+  #logoTextContainer{
+    /* display: contents; */
+    position: absolute;
+    align-self: center;
+    justify-self: center;
+    /* top: 135px; */
+    font-size: 20px;
+    line-height: 10px;
+    color: rgba(0, 0, 0, 0);
+    transition: 1s ease-in-out;
+    z-index: 3;
+    margin-top: 27px;
+  }
+
+  .logoMainContainer:hover > #logoTextContainer{
+    color: rgba(255, 255, 255, 1);
+
+  }
+
+  
+  /* #logo:hover{
+    background-color: rgba(255, 255, 255, 1);
+    width: 200px;
+  } */
+
+  #logoTextHeader{
+    font-weight: bolder;
+    font-size: 30px;
+  }
+
+#background-black{
+  background-color: rgb(255, 255, 255);
+  z-index: 0;
+  height: 350px;
+  width: 350px;
+  border-radius: 50%;
+  margin-top: 2px;
+}

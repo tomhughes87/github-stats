@@ -1,0 +1,44 @@
+.displayerMainContainer{
+    display: flex;
+    align-items: center ;
+    justify-content: center;
+}
+
+#displayer{
+    background-color: rgb(0, 0, 0);
+    width: 122px;
+    height: 122px;
+    border-radius: 50%;
+    z-index: 1;
+    transition: 1s;
+    transform-origin: right;
+    display: flex;
+    justify-content: center;
+}
+
+.frontText{
+    font-size: small;
+    font-weight: 600;
+    align-self: center;
+}
+
+.backText{
+    font-size: small;
+    align-self: center;
+    color: black;
+    font-weight: 600;
+}
+
+#displayerBACK{
+    background-color: rgb(255, 255, 255);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    justify-content: center;    
+}
+
+.displayerMainContainer:hover > #displayer{
+    transform: rotate(130deg);
+}

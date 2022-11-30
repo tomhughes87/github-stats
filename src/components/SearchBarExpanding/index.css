@@ -1,0 +1,100 @@
+.SearchBar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#SearchBar-front {
+  background-color: rgb(255, 255, 255);
+  height: 70px;
+  width: 70px;
+  border-radius: 40px;
+  z-index: 1;
+  transition: 1s;
+  display: flex;
+  justify-content: center;
+  transition: 1s;
+}
+
+#search-btn {
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  background-color: rgb(0, 0, 0);
+  align-self: center;
+  margin-right: 15px;
+  transition: 1s;
+  
+}
+
+#search-btn-text {
+  align-self: center;
+  transition: 1s;
+  color: rgba(0, 0, 0, 0);
+  padding-top: 7px;
+  margin: 0 auto;
+  text-align: center;
+  width: 0px;
+  height: 0px;
+
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0);
+  align-self: center;
+  margin-right: 3px;
+  transition: 1s;
+  /* transform: scale(0); */
+  transform: rotateZ(0deg) scale(0);
+
+}
+
+#searchinput {
+  background-color: rgba(0, 0, 0, 0);
+  color: rgba(0, 0, 0, 0);
+  border: rgba(0, 0, 0, 0);
+  height: 59px;
+  width: 0px;
+  transition: 1s;
+  position: absolute;
+  justify-self: center;
+  align-self: center;
+  font-size: large;
+  font-weight: 600;
+  padding-left: 40px;
+}
+
+#searchinput:focus {
+    outline-width: 0;
+}
+
+#SearchBar-front:hover {
+  width: 400px;
+}
+
+#SearchBar-front:hover > #searchinput {
+  color: rgba(0, 0, 0);
+  width: 280px;
+}
+
+#SearchBar-front:hover > #search-btn-text {
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 1);
+  width: 60px;
+  height: 55px;
+  transform: rotateZ(360deg) scale(1);
+  /* transform: scale(1); */
+  cursor: pointer;
+}
+
+#search-icon {
+  width: 50px;
+  align-self: center;
+  padding-left: 8px;
+  padding-bottom: 3px;
+  margin-right: auto;
+  transition: 1s;
+}
+
+/* rotate the seach icon */
+/* #SearchBar-front:hover > #search-icon{
+    transform: rotateZ(-360deg);
+    } */

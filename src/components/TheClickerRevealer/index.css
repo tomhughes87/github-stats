@@ -1,0 +1,94 @@
+.clickerRevealer-container{
+    display: flex;
+    align-items: center ;
+    justify-content: center;
+}
+
+#clickerRevealer-front-circle{
+    background-color: rgb(0, 0, 0);
+    width: 122px;
+    height: 122px;
+    border-radius: 50%;
+    z-index: 1;
+    transition: 1s;
+    transform-origin: right;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 0%;
+    top: 0;
+
+}
+
+.clickerRevealer-front-text{
+    font-size: small;
+    font-weight: 600;
+    align-self: center;
+}
+
+.clickerRevealer-back-text{
+    font-size: small;
+    align-self: center;
+    color: black;
+    font-weight: 600;
+}
+
+#clickerRevealer-back-circle{
+    background-color: rgb(255, 255, 255);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    justify-content: center;    
+}
+.clickerRevealer-container:hover > .clickerRevealer-back-text{
+    /* transform: scale(0%) translateX(120px); */
+    color: rgb(191, 39, 39),0;
+}
+
+.clickerRevealer-container:hover > #clickerRevealer-front-circle{
+    animation-name: mouseOnClickReveal;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+    
+}
+
+.clickerRevealer-container:not(:hover) > #clickerRevealer-front-circle{
+    animation-name: mouseOffClickReveal;
+    animation-duration: 1s;
+    -o-animation-direction: reverse;
+    -webkit-animation-fill-mode: forwards;
+    /* animation-name: spinBack;
+    animation-duration: 1s; 
+    -webkit-animation-fill-mode: forwards; 
+*/
+}
+
+@keyframes mouseOnClickReveal {
+    0%   { 
+    }
+  
+    100%  {
+        background-color: rgba(255, 255, 255,0);
+        color:rgba(255, 255, 255,0) ;
+
+        /* transform-origin: bottom; */
+        /* rotate: -270(deg); */
+        /* top: 500px; */
+        /* background-color: rgba(255, 255, 255,0); */
+        /* color: rgba(255, 255, 255,0); */
+        /* transform:  rotateX(-90deg);   */
+        
+    }
+  }
+
+  @keyframes mouseOffClickReveal {
+    0%  {
+        background-color: rgba(255, 255, 255,0);
+        color:rgba(255, 255, 255,0) ;
+    }
+    100%   {
+        
+    }
+  }

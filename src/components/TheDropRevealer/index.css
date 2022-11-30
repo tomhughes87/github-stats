@@ -1,0 +1,91 @@
+.dropRevealer-container{
+    display: flex;
+    align-items: center ;
+    justify-content: center;
+}
+
+#dropRevealer-front-circle{
+    background-color: rgb(0, 0, 0);
+    width: 122px;
+    height: 122px;
+    border-radius: 50%;
+    z-index: 1;
+    transition: 1s;
+    transform-origin: right;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 0%;
+    top: 0;
+
+}
+
+.dropRevealer-front-text{
+    font-size: small;
+    font-weight: 600;
+    align-self: center;
+}
+
+.dropReaveal-back-text{
+    font-size: small;
+    align-self: center;
+    color: black;
+    font-weight: 600;
+}
+
+#dropRevealer-back-circle{
+    background-color: rgb(255, 255, 255);
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    justify-content: center;    
+}
+.dropRevealer-container:hover > .dropReaveal-back-text{
+    /* transform: scale(0%) translateX(120px); */
+    color: rgb(191, 39, 39),0;
+}
+
+.dropRevealer-container:hover > #dropRevealer-front-circle{
+    animation-name: spinAway;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+}
+
+.dropRevealer-container:not(:hover) > #dropRevealer-front-circle{
+    animation-name: spinBack;
+    -o-animation-direction: reverse;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+
+}
+
+@keyframes spinAway {
+    0%   {}
+    100%  {
+        /* transform-origin: bottom; */
+        rotate: -270(deg);
+        top: 500px;
+        background-color: rgba(255, 255, 255,0);
+        color: rgba(255, 255, 255,0);
+        /* transform:  rotateX(-90deg);   */
+        
+    }
+  }
+
+  @keyframes spinBack {
+    0%  {
+        /* transform-origin: bottom; */
+        rotate: -270(deg);
+        top: -500px;
+        color: rgba(255, 255, 255,0);
+
+        background-color: rgba(255, 255, 255,0);
+
+        /* transform:  rotateX(-90deg); */
+    }
+    100%   {
+        
+    }
+  }

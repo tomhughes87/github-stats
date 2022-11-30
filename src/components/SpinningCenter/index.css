@@ -1,0 +1,53 @@
+
+.block{
+    background-color: black;
+}
+
+.hovicon {
+    display: inline-block;
+    font-size: 45px;
+    line-height: 90px;
+    cursor: pointer;
+    margin: 20px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    text-align: center;
+    position: relative;
+    text-decoration: none;
+    z-index: 1;
+    color: rgb(54, 214, 164);
+}
+
+
+/* Effect 3 */
+.hovicon.effect-3 {
+    box-shadow: 0 0 0 4px rgb(186, 89, 89);
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;
+}
+.hovicon.effect-3:after {
+    top: -2px;
+    left: -2px;
+    padding: 2px;
+    z-index: -1;
+    background: rgb(12, 212, 212);
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.3s;
+    -moz-transition: -moz-transform 0.2s, opacity 0.3s;
+    transition: transform 0.2s, opacity 0.3s;
+}
+/* Effect 3a */
+ .hovicon.effect-3.sub-a, .hovicon.effect-3.sub-a i {
+    color: #d8f060;
+}
+.hovicon.effect-3.sub-a:hover, .hovicon.effect-3.sub-a:hover i {
+    color: rgb(232, 25, 135);
+}
+.hovicon.effect-3.sub-a:hover:after {
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+    opacity: 0;
+}
