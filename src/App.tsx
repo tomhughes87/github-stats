@@ -28,19 +28,13 @@ function App() {
     location: "",
     public_gists: "",
   });
-
-  const searchBtn = document.getElementById("search-btn-text");
-  searchBtn?.addEventListener("click", function () {
-    setApiCounter(apiCounter + 1);
-    console.log({ apiCounter });
-  });
+  let [searchWord, setSearchWord] = useState("tomhughes87");
+  let [userSearchMessage, setUserSearchMessage] = useState(
+    "Search of a user's GitHub user name"
+  );
 
   useEffect(() => {
-    const testthing = document.getElementById(
-      "searchinput"
-    ) as HTMLInputElement;
-    console.log("USE EFFECT FIRED!" + testthing.value);
-    fetch(`https://api.github.com/users/${testthing.value}`)
+    fetch(`https://api.github.com/users/${searchWord}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error(
@@ -49,26 +43,32 @@ function App() {
         }
         return response.json();
       })
-      .then((actualData) => setMyusername(actualData))
+
+      .then((actualData) => {
+        setMyusername(actualData);
+        console.log("api data:", actualData);
+        setUserSearchMessage(`Showing ${searchWord}'s stats`);
+      })
       .catch((err) => {
         console.log(err.message);
+        // setSearchWord(`We can't find ${searchWord}`);
+        setUserSearchMessage(`${searchWord} not found`);
       });
-  }, [apiCounter]);
+  }, [searchWord]);
 
   return (
     <>
       <NotificationBarParent />
 
-      {/* <input id='testInput'></input> */}
       <div className="App">
         <header className="App-header">
           <LogoWithFadeText />
 
-          <SearchBarExpanding />
+          <SearchBarExpanding setSearchWord={setSearchWord} />
+          <p>{userSearchMessage}</p>
 
           <br></br>
           <br></br>
-
           <div id="align-test">
             <TheDropRevealer data={["public repos", myusername.public_repos]} />
             <Displayer data={["followers", myusername.followers]} />
